@@ -59,7 +59,7 @@ describe('alphabetizeObjectKeys', function () {
       c: 4
     });
   });
-  
+
   it('should leave modify the original object if inPlace is true', function () {
     const object = {
       b: 1,
@@ -73,6 +73,22 @@ describe('alphabetizeObjectKeys', function () {
       b: 1,
       c: 4,
       d: 2
+    });
+  });
+
+  it('should be case sensitive', function () {
+    const object = {
+      b: 1,
+      B: 2,
+      a: 3,
+      A: 4
+    };
+    const newObj = alphabetizeObjectKeys(object);
+    assert.deepEqual(newObj, {
+      A: 4,
+      B: 2,
+      a: 3,
+      b: 1
     });
   });
 });
