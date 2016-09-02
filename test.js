@@ -91,4 +91,21 @@ describe('alphabetizeObjectKeys', function () {
       b: 1
     });
   });
+
+
+  it('should be case insensitive if caseInsensitive is true', function () {
+    const object = {
+      B: 1,
+      b: 2,
+      a: 3,
+      A: 4
+    };
+    const newObj = alphabetizeObjectKeys(object, { caseInsensitive: true });
+    assert.deepEqual(newObj, {
+      A: 4,
+      a: 3,
+      B: 1,
+      b: 2
+    });
+  });
 });
