@@ -3,13 +3,12 @@
 This module exports a single function - `alphabetizeObject` to alphabetize keys
 of an object.
 
-**returns**: A new (or the same, see `inPlace`) object, with keys alphabetized.
+**returns**: A new object, with keys alphabetized.
 
 **parameters**:
  - `Object object` - object to operate upon
  - `Object opts` - options
      - `Boolean recursive` - if true, alphabetize child object keys recursively
-     - `Boolean inPlace` - will modify the original object provided
      - `Boolean caseInsensitive` - will treat keys case insensitive in sorting
 
 **Dependencies**: No.
