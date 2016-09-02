@@ -1,6 +1,6 @@
 'use strict';
 
-const alphabetizeObjectKeys = function (object, opts) {
+const alphabetizeObject = function (object, opts) {
   opts = opts || {};
   const keys = [];
   for (let key in object) {
@@ -21,7 +21,7 @@ const alphabetizeObjectKeys = function (object, opts) {
   if (opts.recursive) {
     for (let key in dest) {
       if (typeof dest[key] === 'object') {
-        dest[key] = alphabetizeObjectKeys(dest[key], opts);
+        dest[key] = alphabetizeObject(dest[key], opts);
       }
     }
   }
@@ -31,4 +31,4 @@ const alphabetizeObjectKeys = function (object, opts) {
   return dest;
 };
 
-module.exports = alphabetizeObjectKeys;
+module.exports = alphabetizeObject;

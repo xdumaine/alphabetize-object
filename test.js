@@ -1,9 +1,9 @@
 'use strict';
 
-const alphabetizeObjectKeys = require('./index');
+const alphabetizeObject = require('./index');
 const assert = require('assert');
 
-describe('alphabetizeObjectKeys', function () {
+describe('alphabetizeObject', function () {
   it('should sort a generic object', function () {
     const object = {
       b: 1,
@@ -11,7 +11,7 @@ describe('alphabetizeObjectKeys', function () {
       a: 3,
       c: 4
     };
-    const newObj = alphabetizeObjectKeys(object);
+    const newObj = alphabetizeObject(object);
     assert.deepEqual(newObj, {
       a: 3,
       b: 1,
@@ -31,7 +31,7 @@ describe('alphabetizeObjectKeys', function () {
       a: 3,
       c: 4
     };
-    const newObj = alphabetizeObjectKeys(object, { recursive: true });
+    const newObj = alphabetizeObject(object, { recursive: true });
     assert.deepEqual(newObj, {
       a: 3,
       b: 1,
@@ -51,7 +51,7 @@ describe('alphabetizeObjectKeys', function () {
       a: 3,
       c: 4
     };
-    const newObj = alphabetizeObjectKeys(object);
+    const newObj = alphabetizeObject(object);
     assert.deepEqual(newObj, {
       b: 1,
       d: 2,
@@ -67,7 +67,7 @@ describe('alphabetizeObjectKeys', function () {
       a: 3,
       c: 4
     };
-    const newObj = alphabetizeObjectKeys(object, { inPlace: true });
+    const newObj = alphabetizeObject(object, { inPlace: true });
     assert.deepEqual(object, {
       a: 3,
       b: 1,
@@ -83,7 +83,7 @@ describe('alphabetizeObjectKeys', function () {
       a: 3,
       A: 4
     };
-    const newObj = alphabetizeObjectKeys(object);
+    const newObj = alphabetizeObject(object);
     assert.deepEqual(newObj, {
       A: 4,
       B: 2,
@@ -100,7 +100,7 @@ describe('alphabetizeObjectKeys', function () {
       a: 3,
       A: 4
     };
-    const newObj = alphabetizeObjectKeys(object, { caseInsensitive: true });
+    const newObj = alphabetizeObject(object, { caseInsensitive: true });
     assert.deepEqual(newObj, {
       A: 4,
       a: 3,
